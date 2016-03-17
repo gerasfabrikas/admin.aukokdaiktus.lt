@@ -1,7 +1,4 @@
 <?php
-
-//define("ROOT", "/var/www/pagalba/daiktais/" ); // root path of project directory
-
 /**
  * Configuration file for: web stuff
  */
@@ -87,11 +84,11 @@ define("EMAIL_SMTP_ENCRYPTION", 'ssl');
  */
 
 /** absolute URL to register.php, necessary for email password reset links */
-define("EMAIL_PASSWORDRESET_URL", "http://www.pagalbadarbais.lt/password_reset.php");
-define("EMAIL_PASSWORDRESET_FROM", "noreply@pagalbadarbais.lt");
-define("EMAIL_PASSWORDRESET_FROM_NAME", "pagalbadarbais.lt");
-define("EMAIL_PASSWORDRESET_SUBJECT", "Slaptaþodþio atkûrimas");
-define("EMAIL_PASSWORDRESET_CONTENT", "Paspauskite ðià nuorodà, kad atkurtumëte slaptaþodá:");
+define("EMAIL_PASSWORDRESET_URL", "http://pagalbadaiktais.lt/password_reset.php");
+define("EMAIL_PASSWORDRESET_FROM", "noreply@pagalbadaiktais.lt");
+define("EMAIL_PASSWORDRESET_FROM_NAME", "pagalbadaiktais.lt");
+define("EMAIL_PASSWORDRESET_SUBJECT", "SlaptaÅ¾odÅ¾io atkÅ«rimas");
+define("EMAIL_PASSWORDRESET_CONTENT", "Paspauskite Å¡iÄ… nuorodÄ…, kad atkurtumÄ—te slaptaÅ¾odÄ¯:");
 
 /**
  * Configuration file for: verification email data
@@ -102,11 +99,11 @@ define("EMAIL_PASSWORDRESET_CONTENT", "Paspauskite ðià nuorodà, kad atkurtumëte 
  */
 
 /** absolute URL to register.php, necessary for email verification links */
-define("EMAIL_VERIFICATION_URL", "http://www.pagalbadarbais.lt/register.php");
-define("EMAIL_VERIFICATION_FROM", "noreply@pagalbadarbais.lt");
-define("EMAIL_VERIFICATION_FROM_NAME", "pagalbadarbais.lt");
+define("EMAIL_VERIFICATION_URL", "http://pagalbadaiktais.lt/register.php");
+define("EMAIL_VERIFICATION_FROM", "noreply@pagalbadaiktais.lt");
+define("EMAIL_VERIFICATION_FROM_NAME", "pagalbadaiktais.lt");
 define("EMAIL_VERIFICATION_SUBJECT", "Paskyros aktyvacija");
-define("EMAIL_VERIFICATION_CONTENT", "Paspauskite ðià nuorodà, kad aktyvuotumëte paskyrà:");
+define("EMAIL_VERIFICATION_CONTENT", "Paspauskite Å¡iÄ… nuorodÄ…, kad aktyvuotumÄ—te paskyrÄ…:");
 
 /**
  * Configuration file for: Hashing strength
