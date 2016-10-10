@@ -90,7 +90,7 @@ endif;
 		<option value="10">Reg. + neregistruoti dovanotojai (prenumeratoriai)</option>
 	</select> <i>Laiškai nesiunčiami neaktyviems vartotojams</i>
 	<br>
-	<label>Nuo</label> <input type="text" name="from" value="<?php if(isset($_POST['from'])) echo $_POST['from']; else echo 'noreply@pagalbadarbais.lt'; ?>" />
+	<label>Nuo</label> <input type="text" name="from" value="<?php if(isset($_POST['from'])) echo $_POST['from']; else echo 'noreply@aukokdaiktus.lt'; ?>" />
 	<br>
 	<label>Tema</label> <input type="text" name="subject" value="<?php if(isset($_POST['subject'])) echo $_POST['subject']; ?>" />
 	<br>

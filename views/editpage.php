@@ -56,8 +56,8 @@ if(!isset($_GET['page']) or $_GET['page'] == 0) :
 		<label>Pavadinimas<span class="reqfield">*</span></label> <input type="text" value="" name="page_name" maxlength="256" required /><br>
 		<label>Santrumpa<span class="reqfield">*</span></label> <input type="text" value="" name="page_slug" maxlength="256" required />
 		<label>Svetainė<span class="reqfield">*</span></label> <select name="page_site">
-			<option value="0">pagalbadarbais.lt</option>
-			<option value="1">pagalbadaiktais.lt</option>
+			<option value="0">aukoklaika.lt</option>
+			<option value="1">aukokdaiktus.lt</option>
 			<option value="2">abi</option>
 		</select><br>
 		<br>
@@ -94,8 +94,8 @@ echo '<div class="name single">Puslapis: <input type="text" value="'.$usermeta['
 echo 'Modifikavimo data: '.$usermeta['page_modified'];
 echo ' &middot; Santrumpa <input type="text" value="'.$usermeta['page_slug'].'" name="page_slug" maxlength="256" required />
 &middot; Svetainė<span class="reqfield"> <select name="page_site">
-			<option value="0"'.($usermeta['page_site'] == 0 ? ' selected="selected"' : '').'>pagalbadarbais.lt</option>
-			<option value="1"'.($usermeta['page_site'] == 1 ? ' selected="selected"' : '').'>pagalbadaiktais.lt</option>
+			<option value="0"'.($usermeta['page_site'] == 0 ? ' selected="selected"' : '').'>aukoklaika.lt</option>
+			<option value="1"'.($usermeta['page_site'] == 1 ? ' selected="selected"' : '').'>aukokdaiktus.lt</option>
 			<option value="2"'.($usermeta['page_site'] == 2 ? ' selected="selected"' : '').'>abi</option>
 		</select>';
 echo '</div>';

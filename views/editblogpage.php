@@ -51,8 +51,8 @@ if(!isset($_GET['page']) or $_GET['page'] == 0) :
 		<label>Pavadinimas<span class="reqfield">*</span></label> <input type="text" value="" name="page_name" maxlength="256" required /><br>
 		<label>Publikavimo data:<span class="reqfield">*</span></label> <input type="text" value="<?php echo date('Y-m-d H:i:s'); ?>" name="page_published" required />
 		<label>Svetainė<span class="reqfield">*</span></label> <select name="page_site">
-			<option value="0">pagalbadarbais.lt</option>
-			<option value="1">pagalbadaiktais.lt</option>
+			<option value="0">aukoklaika.lt</option>
+			<option value="1">aukokdaiktus.lt</option>
 			<option value="2">abi</option>
 		</select><br>
 		<br>
@@ -88,8 +88,8 @@ echo '<div class="edit_header_group noborder">';
 echo '<div class="name single">Naujiena: <input type="text" value="'.$usermeta['page_name'].'" name="page_name" maxlength="256" required /></div>';
 echo 'Modifikavimo data: '.$usermeta['page_modified'];
 echo ' &middot; Publikavimo data <input type="text" value="'.$usermeta['page_published'].'" name="page_published" required /> &middot; Svetainė<span class="reqfield"> <select name="page_site">
-			<option value="0"'.($usermeta['page_site'] == 0 ? ' selected="selected"' : '').'>pagalbadarbais.lt</option>
-			<option value="1"'.($usermeta['page_site'] == 1 ? ' selected="selected"' : '').'>pagalbadaiktais.lt</option>
+			<option value="0"'.($usermeta['page_site'] == 0 ? ' selected="selected"' : '').'>aukoklaika.lt</option>
+			<option value="1"'.($usermeta['page_site'] == 1 ? ' selected="selected"' : '').'>aukokdaiktus.lt</option>
 			<option value="2"'.($usermeta['page_site'] == 2 ? ' selected="selected"' : '').'>abi</option>
 		</select>';
 echo '</div>';

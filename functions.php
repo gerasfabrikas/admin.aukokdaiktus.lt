@@ -375,10 +375,10 @@ function theMenu() {
 	endif;
 	if(isManager()) 		$menu = array(
 								array('home', 'Pradžia'),
-								array('head' => 'PAGALBADAIKTAIS.LT'),
+								array('head' => 'AUKOKDAIKTUS.LT'),
 								array('need', 'Poreikiai', '2'),
 								array('thing', 'Daiktai', '2'),
-								array('head' => 'PAGALBADARBAIS.LT'),
+								array('head' => 'AUKOKLAIKA.LT'),
 								array('need', 'Poreikiai', '1'),
 								array('thing', 'Darbai', '1'),
 								array('head' => 'Bendri duomenys'),
@@ -387,10 +387,10 @@ function theMenu() {
 								);
 	if(isGridManager())		$menu = array(
 								array('home', 'Pradžia'),
-								array('head' => 'PAGALBADAIKTAIS.LT'),
+								array('head' => 'AUKOKDAIKTUS.LT'),
 								array('need', 'Poreikiai', '2'),
 								array('thing', 'Daiktai', '2'),
-								array('head' => 'PAGALBADARBAIS.LT'),
+								array('head' => 'AUKOKLAIKA.LT'),
 								array('need', 'Poreikiai', '1'),
 								array('thing', 'Darbai', '1'),
 								array('head' => 'Bendri duomenys'),
@@ -399,19 +399,19 @@ function theMenu() {
 								array('colleagues', 'Kolegų kontaktai'),
 								array('head' => 'MANO KURATORIŲ DUOMENYS'),
 								array('needyman', 'Stokojantieji'),
-								array('needman', 'pagalbadaiktais.lt poreikiai', '2'),
+								array('needman', 'aukokdaiktus.lt poreikiai', '2'),
 								array('thingman', 'Daiktai', '2'),
-								array('needman', 'pagalbadarbais.lt poreikiai', '1'),
+								array('needman', 'aukoklaika.lt poreikiai', '1'),
 								array('thingman', 'Darbai', '1'),
 								);
 	
 	if(isAdmin())			$menu = array(
 								array('home', 'Pradžia'),
-								array('head' => 'PAGALBADAIKTAIS.LT'),
+								array('head' => 'AUKOKDAIKTUS.LT'),
 								array('need', 'Poreikiai', '2'),
 								array('thing', 'Daiktai', '2'),
 								array('thingd', 'Dovanotojai', '2'),
-								array('head' => 'PAGALBADARBAIS.LT'),
+								array('head' => 'AUKOKLAIKA.LT'),
 								array('need', 'Poreikiai', '1'),
 								array('thing', 'Darbai', '1'),
 								array('thingd', 'Geradariai', '1'),
@@ -749,18 +749,18 @@ function getGroupName($acctype) {if($acctype == 0) return 'Geradarys'; return ge
 
 function getBlogLinks($params = array(0, 0)) {
 	switch($params[1]) :
-		case 0 : echo '<a target="_blank" href="http://www.pagalbadarbais.lt/naujienos/'.$params[0].'"><i class="fa fa-globe"></i></a>'; break;
-		case 1 : echo '<a target="_blank" href="http://www.pagalbadaiktais.lt/naujienos/'.$params[0].'"><i class="fa fa-globe"></i></a>'; break;
-		case 2 : echo '<a target="_blank" href="http://www.pagalbadarbais.lt/naujienos/'.$params[0].'"><i class="fa fa-globe"></i></a> <a target="_blank" href="http://www.pagalbadaiktais.lt/naujienos/'.$params[0].'"><i class="fa fa-globe"></i></a>'; break;
+		case 0 : echo '<a target="_blank" href="http://www.aukoklaika.lt/naujienos/'.$params[0].'"><i class="fa fa-globe"></i></a>'; break;
+		case 1 : echo '<a target="_blank" href="http://www.aukokdaiktus.lt/naujienos/'.$params[0].'"><i class="fa fa-globe"></i></a>'; break;
+		case 2 : echo '<a target="_blank" href="http://www.aukoklaika.lt/naujienos/'.$params[0].'"><i class="fa fa-globe"></i></a> <a target="_blank" href="http://www.aukokdaiktus.lt/naujienos/'.$params[0].'"><i class="fa fa-globe"></i></a>'; break;
 		default :
 	endswitch;
 }
 
 function getPageLinks($params = array('', 0)) {
 	switch($params[1]) :
-		case 0 : echo '<a target="_blank" href="http://www.pagalbadarbais.lt/'.$params[0].'"><i class="fa fa-globe"></i></a>'; break;
-		case 1 : echo '<a target="_blank" href="http://www.pagalbadaiktais.lt/'.$params[0].'"><i class="fa fa-globe"></i></a>'; break;
-		case 2 : echo '<a target="_blank" href="http://www.pagalbadarbais.lt/'.$params[0].'"><i class="fa fa-globe"></i></a> <a target="_blank" href="http://www.pagalbadaiktais.lt/'.$params[0].'"><i class="fa fa-globe"></i></a>'; break;
+		case 0 : echo '<a target="_blank" href="http://www.aukoklaika.lt/'.$params[0].'"><i class="fa fa-globe"></i></a>'; break;
+		case 1 : echo '<a target="_blank" href="http://www.aukokdaiktus.lt/'.$params[0].'"><i class="fa fa-globe"></i></a>'; break;
+		case 2 : echo '<a target="_blank" href="http://www.aukoklaika.lt/'.$params[0].'"><i class="fa fa-globe"></i></a> <a target="_blank" href="http://www.aukokdaiktus.lt/'.$params[0].'"><i class="fa fa-globe"></i></a>'; break;
 		default :
 	endswitch;
 }
@@ -833,7 +833,7 @@ function acctypeBack() {
  * @param string $fromName
  * @return bool
  */
-function myMail($to, $subject, $message, $from = 'noreply@pagalbadaiktais.lt', $fromName = '') {
+function myMail($to, $subject, $message, $from = 'noreply@aukokdaiktus.lt', $fromName = '') {
 
     $mail = new PHPMailer;
 

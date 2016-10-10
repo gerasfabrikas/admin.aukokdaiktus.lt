@@ -75,7 +75,7 @@ class Core {
      *
      * @param null|int $userId
      * @param null|string $basenameOfFileToRemove      filename to remove (PATHINFO_BASENAME)
-     * @param string $webRootUrl                       e.g.: http://pagalbadaiktais.lt/
+     * @param string $webRootUrl                       e.g.: http://aukokdaiktus.lt/
      * @return bool|void
      */
     public function uploadFile($userId = null, $basenameOfFileToRemove = null, $webRootUrl = '', $tableName = 'users') {

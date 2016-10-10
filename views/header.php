@@ -14,7 +14,7 @@ endif;
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>pagalbadarbais.lt</title>
+        <title>admin | (aukoklaika.lt, aukokdaiktus.lt)</title>
 		<link rel="stylesheet" type="text/css" href="normalize.css" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
