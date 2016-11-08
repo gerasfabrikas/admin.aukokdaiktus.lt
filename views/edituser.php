@@ -9,7 +9,7 @@ if(!isset($_GET['user']) or $_GET['user'] == 0) :
 		$user_acctype = ( (isset($_POST['user_acctype']) ) ? $_POST['user_acctype'] : 0 );
 		if(isGridManager()) : $user_acctype = 1; endif; // apsauga
 		
-		$user_person = (isset($_POST['user_person']) and $_POST['user_person'] == 1 and $user_acctype == '0' ? 1 : 0);
+		$user_person = (int) (isset($_POST['user_person']) && 1 == $_POST['user_person'] && '0' === $user_acctype);
 		
 		$user_name = (isset($_POST['user_name']) ? mysqli_real_escape_string($con, $_POST['user_name']) : '');
 		
@@ -51,7 +51,7 @@ if(!isset($_GET['user']) or $_GET['user'] == 0) :
 		else :
 			$id = insertRow('users',
 			'user_name, user_acctype, user_active, user_subscribed, user_password_hash, user_legalstatus, user_person, user_fname, user_lname, user_orgname, user_code1, user_code2, user_reg, user_address, user_region, user_city, user_phone, user_email, user_desc, user_registration_datetime',
-			"'$user_name', $user_acctype, 1, 1, '$user_password_hash', $user_legalstatus, '$user_person', '$user_fname', '$user_lname', '$user_orgname', '$user_code1', '$user_code2', '$user_reg', '$user_address', '$user_region', '$user_city', '$user_phone', '$user_email', '$user_desc', '".date('Y-m-d H:i:s')."'"
+			"'$user_name', $user_acctype, 1, 1, '$user_password_hash', $user_legalstatus, $user_person, '$user_fname', '$user_lname', '$user_orgname', '$user_code1', '$user_code2', '$user_reg', '$user_address', '$user_region', '$user_city', '$user_phone', '$user_email', '$user_desc', '".date('Y-m-d H:i:s')."'"
 			);
 			
 			if($id and isGridManager()) :
