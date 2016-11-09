@@ -5,8 +5,7 @@ if(isAction('deaktyvuoti') and getParam()) :
 	if(isGridManager() and countData('users', "user_parent = ".CUSER." AND user_id = '".getParam()."'") == 0) {err('Neturite teisės keisti šio vartotojo duomenis', 'red'); return;}
 
 	$row = getRow('users', 'user_id = '.getParam());
-	$act = $row['user_active'];
-	$act = !$act;
+	$act = $row['user_active'] ? 0 : 1;
 	updateFieldWhere('users', 'user_active', $act, 'user_id = '.getParam());
 	
 	redirect(0, getCurrentLink());
