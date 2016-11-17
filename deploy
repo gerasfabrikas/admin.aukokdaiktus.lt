@@ -4,6 +4,7 @@ ssh aukok@gerasfabrikas.lt -p 20020 /bin/bash << EOF
     cd www/admin.aukokdaiktus.lt;
     git pull;
     git merge origin/develop;
-    echo "deployed!";
     git push;
+    echo "Deployed!";
+    echo "";
 EOF
