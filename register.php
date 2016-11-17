@@ -1,12 +1,6 @@
 <?php
 include('functions.php');
 
-// @todo: remove this dev part
-if(isset($_SERVER['APP_ENV']) && (strtolower($_SERVER['APP_ENV']) == 'dev')) {
-    error_reporting(E_ALL | E_STRICT);
-    ini_set('display_errors','on');
-}
-
 /**
  * A simple, clean and secure PHP Login Script
  *

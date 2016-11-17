@@ -1,14 +1,5 @@
 <?php if($login->isUserLoggedIn() == false) return;
 
-// @todo: remove this errors part...
-if(isset($_SERVER['APP_ENV']) && (strtolower($_SERVER['APP_ENV']) == 'dev')) {
-    error_reporting(E_ALL | E_STRICT);
-    ini_set('display_errors','on');
-} else {
-    error_reporting(0);
-    ini_set('display_errors',false);
-}
-
 if(isAction('deaktyvuoti') and getParam()) :
 		
 	if(isGridManager() and countData('users', "user_parent = ".CUSER." AND user_id = '".getParam()."'") == 0) {err('Neturite teisės keisti šio vartotojo duomenis', 'red'); return;}

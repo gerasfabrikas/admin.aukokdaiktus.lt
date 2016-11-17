@@ -1,16 +1,4 @@
 <?php
-
-// @todo: remove this errors part...
-if(isset($_SERVER['APP_ENV']) && (strtolower($_SERVER['APP_ENV']) == 'dev')) {
-    error_reporting(E_ALL | E_STRICT);
-    ini_set('display_errors','on');
-} else {
-    error_reporting(0);
-    ini_set('display_errors',false);
-}
-
-date_default_timezone_set('Europe/Vilnius');
-
 require_once('config/config.php');
 
 // Web core class
