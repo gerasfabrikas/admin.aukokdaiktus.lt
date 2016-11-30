@@ -884,6 +884,7 @@ function myMail($to, $subject, $message, $from = 'noreply@aukokdaiktus.lt', $fro
 
     // the link to your register.php, please set this value in config/email_verification.php
     $mail->Body = $message;
+    $mail->IsHTML(true);
 
     if(!$mail->Send()) {
         //$this->errors[] = 'Mail not sent' . $mail->ErrorInfo;
