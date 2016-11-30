@@ -811,17 +811,34 @@ function acctypeBack() {
 	return false;
 }
 
-// Mail
+function isDevelopmentEnvironment()
+{
+    return (strpos($_SERVER['HTTP_HOST'], '.local') || strpos($_SERVER['HTTP_HOST'], '.dev'));
+}
 
-/**
- * @param string|array $to
- * @param $subject
- * @param $message
- * @param string $from
- * @param string $fromName
- * @return bool
- */
+function logEmailMessage($from, $to, $subject, $message)
+{
+    global $con;
+
+    $query = sprintf(
+        "INSERT INTO `email_log` (`from`, `to`, `subject`, `message`, `created`) 
+		 VALUES ('%s', '%s', '%s', '%s', NOW())",
+        mysqli_real_escape_string($con, $from),
+        mysqli_real_escape_string($con, $to),
+        mysqli_real_escape_string($con, $subject),
+        mysqli_real_escape_string($con, $message)
+    );
+
+    return mysqli_query($con, $query);
+}
+
+// Mail
 function myMail($to, $subject, $message, $from = 'noreply@aukokdaiktus.lt', $fromName = '') {
+
+    logEmailMessage($from, $to, $subject, $message);
+    if (isDevelopmentEnvironment()){
+        return true;
+    }
 
     $mail = new PHPMailer;
 
