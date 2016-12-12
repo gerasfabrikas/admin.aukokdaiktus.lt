@@ -74,6 +74,8 @@ define("EMAIL_SMTP_USERNAME", 'yourusername');
 define("EMAIL_SMTP_PASSWORD", 'yourpassword');
 define("EMAIL_SMTP_PORT", 465);
 define("EMAIL_SMTP_ENCRYPTION", 'ssl');
+define("EMAIL_DEFAULT_FROM", 'noreply@aukokdaiktus.lt');
+define("EMAIL_DEFAULT_TO", 'info@aukokdaiktus.lt');
 
 /**
  * Configuration file for: password reset email data
@@ -85,7 +87,7 @@ define("EMAIL_SMTP_ENCRYPTION", 'ssl');
 
 /** absolute URL to register.php, necessary for email password reset links */
 define("EMAIL_PASSWORDRESET_URL", "http://www.aukokdaiktus.lt/password_reset.php");
-define("EMAIL_PASSWORDRESET_FROM", "noreply@aukokdaiktus.lt");
+define("EMAIL_PASSWORDRESET_FROM", EMAIL_DEFAULT_FROM);
 define("EMAIL_PASSWORDRESET_FROM_NAME", "aukokdaiktus.lt");
 define("EMAIL_PASSWORDRESET_SUBJECT", "Slaptažodžio atkūrimas");
 define("EMAIL_PASSWORDRESET_CONTENT", "Paspauskite šią nuorodą, kad atkurtumėte slaptažodį:");
@@ -100,7 +102,7 @@ define("EMAIL_PASSWORDRESET_CONTENT", "Paspauskite šią nuorodą, kad atkurtum�
 
 /** absolute URL to register.php, necessary for email verification links */
 define("EMAIL_VERIFICATION_URL", "http://www.aukokdaiktus.lt/register.php");
-define("EMAIL_VERIFICATION_FROM", "noreply@aukokdaiktus.lt");
+define("EMAIL_VERIFICATION_FROM", EMAIL_DEFAULT_FROM);
 define("EMAIL_VERIFICATION_FROM_NAME", "aukokdaiktus.lt");
 define("EMAIL_VERIFICATION_SUBJECT", "Paskyros aktyvacija");
 define("EMAIL_VERIFICATION_CONTENT", "Paspauskite šią nuorodą, kad aktyvuotumėte paskyrą:");

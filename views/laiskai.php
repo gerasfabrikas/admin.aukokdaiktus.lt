@@ -30,28 +30,15 @@ if(isset($_POST['send'])) :
 		$recips = array();
 		foreach(listData(false, false, false, $q) as $rec) if($rec['user_email'] != '') $recips[] = $rec['user_email'];
 		$amount = count($recips);
-		//$recips = implode(', ', $recips);
-
-        $sendByOne = false;
-
         $report = array('success' => array(), 'fail' => array());
-        if($sendByOne) {
-            if($amount > 0) {
-                foreach($recips as $receip) {
-                    $successfullySent = myMail($receip, $_POST['subject'], $_POST['message'], $_POST['from']);
-                    if($successfullySent) {
-                        $report['success'][$receip] = $receip;
-                    } else {
-                        $report['fail'][$receip] = $receip;
-                    }
+        if ($amount > 0) {
+            foreach($recips as $receip) {
+                $successfullySent = myMail($receip, $_POST['subject'], $_POST['message'], $_POST['from']);
+                if($successfullySent) {
+                    $report['success'][$receip] = $receip;
+                } else {
+                    $report['fail'][$receip] = $receip;
                 }
-            }
-        } else {
-            $successfullySent = myMail($recips, $_POST['subject'], $_POST['message'], $_POST['from']);
-            if($successfullySent) {
-                $report['success'] = $recips;
-            } else {
-                $report['fail'] = $recips;
             }
         }
 

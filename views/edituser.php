@@ -57,11 +57,13 @@ if(!isset($_GET['user']) or $_GET['user'] == 0) :
 			if($id and isGridManager()) :
 				updateFieldWhere('users', 'user_parent', CUSER, 'user_id='.$id);
 			endif;
-			
-			if($id) :
-				myMail($user_email,
-				'Jūsų vartotojo paskyra sukurta',
-				'Jūsų aukokdaiktus.lt ir aukoklaika.lt vartotojo paskyra sukurta.<br><br>Paskyros vardas: '.$user_name.'<br>Slaptažodis: '.$_POST['user_password_hash']
+
+			if ($id) :
+				myMail(
+				    $user_email,
+				    'Jūsų vartotojo paskyra sukurta',
+				    'Jūsų aukokdaiktus.lt ir aukoklaika.lt vartotojo paskyra sukurta.<br><br>Paskyros vardas: ' .
+                    $user_name.'<br>Slaptažodis: '. $_POST['user_password_hash']
 				);
 
                 // take care of uploads
