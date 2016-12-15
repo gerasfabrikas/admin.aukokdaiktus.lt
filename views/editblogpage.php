@@ -48,8 +48,8 @@ endif;
 if(!isset($_GET['page']) or $_GET['page'] == 0) :	
 	?>
 	<form action="" method="post">	
-		<label>Pavadinimas<span class="reqfield">*</span></label> <input type="text" value="" name="page_name" maxlength="256" required /><br>
-		<label>Publikavimo data:<span class="reqfield">*</span></label> <input type="text" value="<?php echo date('Y-m-d H:i:s'); ?>" name="page_published" required />
+		<label>Pavadinimas<span class="reqfield">*</span></label> <input type="text" value="" name="page_name" maxlength="256" required="required" /><br>
+		<label>Publikavimo data:<span class="reqfield">*</span></label> <input type="text" value="<?php echo date('Y-m-d H:i:s'); ?>" name="page_published" required="required" />
 		<label>Svetainė<span class="reqfield">*</span></label> <select name="page_site">
 			<option value="0">aukoklaika.lt</option>
 			<option value="1">aukokdaiktus.lt</option>
@@ -85,9 +85,9 @@ $usermeta = getRow('pages', 'page_id = '.$us); ?>
 
 // Title
 echo '<div class="edit_header_group noborder">';
-echo '<div class="name single">Naujiena: <input type="text" value="'.$usermeta['page_name'].'" name="page_name" maxlength="256" required /></div>';
+echo '<div class="name single">Naujiena: <input type="text" value="'.$usermeta['page_name'].'" name="page_name" maxlength="256" required="required" /></div>';
 echo 'Modifikavimo data: '.$usermeta['page_modified'];
-echo ' &middot; Publikavimo data <input type="text" value="'.$usermeta['page_published'].'" name="page_published" required /> &middot; Svetainė<span class="reqfield"> <select name="page_site">
+echo ' &middot; Publikavimo data <input type="text" value="'.$usermeta['page_published'].'" name="page_published" required="required" /> &middot; Svetainė<span class="reqfield"> <select name="page_site">
 			<option value="0"'.($usermeta['page_site'] == 0 ? ' selected="selected"' : '').'>aukoklaika.lt</option>
 			<option value="1"'.($usermeta['page_site'] == 1 ? ' selected="selected"' : '').'>aukokdaiktus.lt</option>
 			<option value="2"'.($usermeta['page_site'] == 2 ? ' selected="selected"' : '').'>abi</option>

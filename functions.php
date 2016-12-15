@@ -463,9 +463,9 @@ function theMenu() {
 				'edit'.rtrim($menuit[0], 's'),
 				'edit'.$menuit[0],
 			);
-			if((in_array(page(), $allowed) or in_array(page(), $allowed2)) and !isset($menuit[2])) $class='class="current"';
-			if(in_array(page(), $allowed) and isset($menuit[2]) and ($menuit[2] == subpage() or (isset($_GET['type']) and $menuit[2] == $_GET['type']))) $class='class="current"';
-			echo '<li><a href="?p='.$menuit[0].(isset($menuit[2]) ? '&subp='.$menuit[2]: '').'"'.$class.'>'.$menuit[1].'</a></li>';
+			if((in_array(page(), $allowed) or in_array(page(), $allowed2)) and !isset($menuit[2])) $class=' class="current"';
+			if(in_array(page(), $allowed) and isset($menuit[2]) and ($menuit[2] == subpage() or (isset($_GET['type']) and $menuit[2] == $_GET['type']))) $class=' class="current"';
+			echo '<li><a href="?p='.$menuit[0].(isset($menuit[2]) ? '&amp;subp='.$menuit[2]: '').'" '.$class.'>'.$menuit[1].'</a></li>';
 		endif;
 	endforeach;
 }

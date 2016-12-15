@@ -1,10 +1,10 @@
 <!-- edit form for user's password / this form uses the HTML5 attribute "required" -->
 <form method="post" action="" name="user_edit_form_password">
-	<label for="user_password_old"><?php echo $phplogin_lang['Old password']; ?><span class="reqfield">*</span></label><input id="user_password_old" type="password" name="user_password_old" autocomplete="off" required />
+	<label for="user_password_old"><?php echo $phplogin_lang['Old password']; ?><span class="reqfield">*</span></label><input id="user_password_old" type="password" name="user_password_old" autocomplete="off" required="required"  />
 	<br>
-	<label for="user_password_new"><?php echo $phplogin_lang['New password']; ?><span class="reqfield">*</span></label><input id="user_password_new" type="password" name="user_password_new" autocomplete="off" required />
+	<label for="user_password_new"><?php echo $phplogin_lang['New password']; ?><span class="reqfield">*</span></label><input id="user_password_new" type="password" name="user_password_new" autocomplete="off" required="required"  />
 	<br>
-	<label for="user_password_repeat"><?php echo $phplogin_lang['Repeat new password']; ?><span class="reqfield">*</span></label><input id="user_password_repeat" type="password" name="user_password_repeat" autocomplete="off" required />
+	<label for="user_password_repeat"><?php echo $phplogin_lang['Repeat new password']; ?><span class="reqfield">*</span></label><input id="user_password_repeat" type="password" name="user_password_repeat" autocomplete="off" required="required"  />
 
 	<br>
 	<label></label><input type="submit" name="user_edit_submit_password" value="<?php echo $phplogin_lang['Change password']; ?>" />

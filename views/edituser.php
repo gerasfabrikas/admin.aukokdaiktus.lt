@@ -119,25 +119,25 @@ if(!isset($_GET['user']) or $_GET['user'] == 0) :
 			<input type="hidden" name="user_acctype" value="<?php echo $acctype; ?>" />
 			<input type="hidden" name="user_person" value="<?php echo $juridinis; ?>" />
 			
-			<label>Paskyros vardas:<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_name']) ? $_POST['user_name'] : ''); ?>" name="user_name" required /><br>
-			<label>El. paštas<span class="reqfield">*</span></label> <input type="email" value="<?php echo (isset($_POST['user_email']) ? $_POST['user_email'] : ''); ?>" name="user_email" required /><br>
+			<label>Paskyros vardas:<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_name']) ? $_POST['user_name'] : ''); ?>" name="user_name" required="required" /><br>
+			<label>El. paštas<span class="reqfield">*</span></label> <input type="email" value="<?php echo (isset($_POST['user_email']) ? $_POST['user_email'] : ''); ?>" name="user_email" required="required" /><br>
 			
-			<label>Slaptažodis<span class="reqfield">*</span></label> <input type="password" value="" name="user_password_hash" required /><br>
+			<label>Slaptažodis<span class="reqfield">*</span></label> <input type="password" value="" name="user_password_hash" required="required" /><br>
 			
 			<?php if ($juridinis == 0) : ?>
-			<label>Vardas<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_fname']) ? $_POST['user_fname'] : ''); ?>" name="user_fname" maxlength="32" required /><br>
-			<label>Pavardė<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_lname']) ? $_POST['user_lname'] : ''); ?>" name="user_lname" maxlength="32" required /><br>
+			<label>Vardas<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_fname']) ? $_POST['user_fname'] : ''); ?>" name="user_fname" maxlength="32" required="required" /><br>
+			<label>Pavardė<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_lname']) ? $_POST['user_lname'] : ''); ?>" name="user_lname" maxlength="32" required="required" /><br>
 			<?php else : ?>
 			<label>Teisinis statusas<span class="reqfield">*</span></label> <select name="user_legalstatus">
 				<?php foreach($legalStatuses as $okey => $op) echo '<option '.((isset($_POST['user_legalstatus']) and $_POST['user_legalstatus'] == $okey) ? 'selected="selected"' : '').' value='.$okey.'>'.$op.'</option>'; ?>
 			</select><br>
-			<label>Pavadinimas<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_orgname']) ? $_POST['user_orgname'] : ''); ?>" name="user_orgname"  maxlength="128" required /><br>
-			<label>Įmonės kodas<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_code1']) ? $_POST['user_code1'] : ''); ?>" name="user_code1"  maxlength="9" required /><br>
+			<label>Pavadinimas<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_orgname']) ? $_POST['user_orgname'] : ''); ?>" name="user_orgname"  maxlength="128" required="required" /><br>
+			<label>Įmonės kodas<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_code1']) ? $_POST['user_code1'] : ''); ?>" name="user_code1"  maxlength="9" required="required" /><br>
 			<label>PVM kodas</label> <input type="text" value="<?php echo (isset($_POST['user_code2']) ? $_POST['user_code2'] : ''); ?>" name="user_code2" maxlength="14" /><br>
 			<label>Registras</label> <input type="text" value="<?php echo (isset($_POST['user_reg']) ? $_POST['user_reg'] : ''); ?>" name="user_reg"  maxlength="128" /><br>
 			<?php endif; ?>
 			
-			<label>Adresas<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_address']) ? $_POST['user_address'] : ''); ?>" name="user_address" required /><br>
+			<label>Adresas<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_address']) ? $_POST['user_address'] : ''); ?>" name="user_address" required="required" /><br>
 
 			<label>Apskritis<span class="reqfield">*</span></label>
 			<select name="user_region"><?php
@@ -149,7 +149,7 @@ if(!isset($_GET['user']) or $_GET['user'] == 0) :
 			<select name="user_city"></select>
 			<br>		
 			
-			<label>Telefonas<span class="reqfield">*</span><br><small>formatu 37012345678</small></label> <input type="text" value="<?php echo (isset($_POST['user_phone']) ? $_POST['user_phone'] : ''); ?>" name="user_phone" maxlength="11" required /><br>
+			<label>Telefonas<span class="reqfield">*</span><br><small>formatu 37012345678</small></label> <input type="text" value="<?php echo (isset($_POST['user_phone']) ? $_POST['user_phone'] : ''); ?>" name="user_phone" maxlength="11" required="required" /><br>
 			
 			<?php if($acctype > 0) : ?>
 				<label>Atstovaujama organizacija</label> <input type="text" value="<?php echo (isset($_POST['user_orgname']) ? $_POST['user_orgname'] : ''); ?>" name="user_orgname"  maxlength="128" /><br>

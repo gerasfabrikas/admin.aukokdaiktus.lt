@@ -53,8 +53,8 @@ endif;
 if(!isset($_GET['page']) or $_GET['page'] == 0) :	
 	?>
 	<form action="" method="post">	
-		<label>Pavadinimas<span class="reqfield">*</span></label> <input type="text" value="" name="page_name" maxlength="256" required /><br>
-		<label>Santrumpa<span class="reqfield">*</span></label> <input type="text" value="" name="page_slug" maxlength="256" required />
+		<label>Pavadinimas<span class="reqfield">*</span></label> <input type="text" value="" name="page_name" maxlength="256" required="required" /><br>
+		<label>Santrumpa<span class="reqfield">*</span></label> <input type="text" value="" name="page_slug" maxlength="256" required="required" />
 		<label>Svetainė<span class="reqfield">*</span></label> <select name="page_site">
 			<option value="0">aukoklaika.lt</option>
 			<option value="1">aukokdaiktus.lt</option>
@@ -90,9 +90,9 @@ $usermeta = getRow('pages', 'page_id = '.$us); ?>
 
 // Title
 echo '<div class="edit_header_group noborder">';
-echo '<div class="name single">Puslapis: <input type="text" value="'.$usermeta['page_name'].'" name="page_name" maxlength="256" required /></div>';
+echo '<div class="name single">Puslapis: <input type="text" value="'.$usermeta['page_name'].'" name="page_name" maxlength="256" required="required" /></div>';
 echo 'Modifikavimo data: '.$usermeta['page_modified'];
-echo ' &middot; Santrumpa <input type="text" value="'.$usermeta['page_slug'].'" name="page_slug" maxlength="256" required />
+echo ' &middot; Santrumpa <input type="text" value="'.$usermeta['page_slug'].'" name="page_slug" maxlength="256" required="required" />
 &middot; Svetainė<span class="reqfield"> <select name="page_site">
 			<option value="0"'.($usermeta['page_site'] == 0 ? ' selected="selected"' : '').'>aukoklaika.lt</option>
 			<option value="1"'.($usermeta['page_site'] == 1 ? ' selected="selected"' : '').'>aukokdaiktus.lt</option>

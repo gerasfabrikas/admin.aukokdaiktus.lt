@@ -11,7 +11,7 @@ endif;
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
     <head>
         <meta charset="utf-8">
         <title>admin | (aukoklaika.lt, aukokdaiktus.lt)</title>
@@ -39,10 +39,10 @@ endif;
 			<form method="post" action="index.php" name="loginform">
 				<div class="inpwrap inline">
 					<small>El. paštas arba paskyros vardas</small><br>
-					<input id="user_name" type="text" name="user_name" required />
+					<input id="user_name" type="text" name="user_name" required="required" />
 				</div><div class="inpwrap inline">
 					<small>Slaptažodis</small><br>
-					<input id="user_password" type="password" name="user_password" autocomplete="off" required />
+					<input id="user_password" type="password" name="user_password" autocomplete="off" required="required" />
 				</div>
 				<input type="hidden" id="user_rememberme" name="user_rememberme" value="1" />
 				<input type="submit" name="login" value="Prisijungti" />
@@ -52,7 +52,7 @@ endif;
 		
 		<?php if (isset($login) and $login->isUserLoggedIn() == true) : ?>
 		<?php if(isAdmin() or isManager() or isGridManager()) : ?>
-		<form class="srchform" action="" method="GET">
+		<form class="srchform" action="/index.php" method="GET">
 			Paieška <input type="text" value="<?php if(isset($_GET['srch'])) echo $_GET['srch']; ?>" name="srch" />
 			<input type="hidden" value="search" name="p" />
 		</form>

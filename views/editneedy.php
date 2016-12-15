@@ -112,12 +112,12 @@ if(!isset($_GET['user']) or $_GET['user'] == 0) :
 	<form action="" method="post" enctype="multipart/form-data">
 		<?php if (!isset($_GET['juridinis'])) : ?>
 		<input type="hidden" name="user_person" value="0" />
-		<label>Vardas<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_fname']) ? $_POST['user_fname'] : ''); ?>" name="user_fname" maxlength="32" required /><br>
-		<label>Pavardė<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_lname']) ? $_POST['user_lname'] : ''); ?>" name="user_lname" maxlength="32" required /><br>
+		<label>Vardas<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_fname']) ? $_POST['user_fname'] : ''); ?>" name="user_fname" maxlength="32" required="required" /><br>
+		<label>Pavardė<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_lname']) ? $_POST['user_lname'] : ''); ?>" name="user_lname" maxlength="32" required="required" /><br>
 		<?php else : ?>
 		<input type="hidden" name="user_person" value="1" />
-		<label>Pavadinimas<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_orgname']) ? $_POST['user_orgname'] : ''); ?>" name="user_orgname"  maxlength="128" required /><br>
-		<label>Įmonės kodas<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_code1']) ? $_POST['user_code1'] : ''); ?>" name="user_code1"  maxlength="9" required /><br>
+		<label>Pavadinimas<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_orgname']) ? $_POST['user_orgname'] : ''); ?>" name="user_orgname"  maxlength="128" required="required" /><br>
+		<label>Įmonės kodas<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_code1']) ? $_POST['user_code1'] : ''); ?>" name="user_code1"  maxlength="9" required="required" /><br>
 		<label>PVM kodas</label> <input type="text" value="<?php echo (isset($_POST['user_code2']) ? $_POST['user_code2'] : ''); ?>" name="user_code2" maxlength="14" /><br>
 		<label>Registras</label> <input type="text" value="<?php echo (isset($_POST['user_reg']) ? $_POST['user_reg'] : ''); ?>" name="user_reg"  maxlength="128" /><br>
 		<?php endif; ?>
@@ -130,7 +130,8 @@ if(!isset($_GET['user']) or $_GET['user'] == 0) :
 		</select>
 		<br>
 		
-		<label>Adresas<span class="reqfield">*</span></label> <input type="text" value="<?php echo (isset($_POST['user_address']) ? $_POST['user_address'] : ''); ?>" name="user_address" required /><br>
+		<label>Adresas<span class="reqfield">*</span></label>
+        <input type="text" value="<?php echo (isset($_POST['user_address']) ? $_POST['user_address'] : ''); ?>" name="user_address" required="required" /><br>
 
 		<label>Apskritis<span class="reqfield">*</span></label>
 		<select name="user_region"><?php
@@ -142,11 +143,11 @@ if(!isset($_GET['user']) or $_GET['user'] == 0) :
 		<select name="user_city"></select>
 		<br>		
 		
-		<label>Telefonas<span class="reqfield">*</span><br><small>formatu 37012345678</small></label> <input type="text" value="<?php echo (isset($_POST['user_phone']) ? $_POST['user_phone'] : ''); ?>" name="user_phone" maxlength="11" required /><br>
+		<label>Telefonas<span class="reqfield">*</span><br><small>formatu 37012345678</small></label> <input type="text" value="<?php echo (isset($_POST['user_phone']) ? $_POST['user_phone'] : ''); ?>" name="user_phone" maxlength="11" required="required" /><br>
 		
 		<label>El. paštas<?php if(isset($_GET['juridinis'])) : ?><span class="reqfield">*</span><?php endif; ?></label> <input type="email" value="<?php echo (isset($_POST['user_email']) ? $_POST['user_email'] : ''); ?>" name="user_email" <?php if(isset($_GET['juridinis'])) : ?>required<?php endif; ?> /><br>
 		
-		<label>Aprašymas<span class="reqfield">*</span></label> <textarea name="user_desc" required /><?php echo (isset($_POST['user_desc']) ? $_POST['user_desc'] : ''); ?></textarea><br>
+		<label>Aprašymas<span class="reqfield">*</span></label> <textarea name="user_desc" required="required" /><?php echo (isset($_POST['user_desc']) ? $_POST['user_desc'] : ''); ?></textarea><br>
 		
 		<label for="user_thumb"><?php echo (isset($_GET['juridinis']) ? 'Logotipas' : 'Nuotrauka'); ?><br><small>JPG, PNG, maks. 5 MB</small></label>
 		<input type="file" name="user_thumb" id="user_thumb" />

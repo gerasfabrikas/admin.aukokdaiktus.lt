@@ -56,7 +56,7 @@ if(!isset($_GET['need']) or $_GET['need'] == 0) :
 	endif;
 	
 	?>
-	<form action="" method="post">
+	<form action="/index.php" method="post">
 		<label>Stokojantis<span class="reqfield">*</span></label>
 		<select name="need_needy"><?php
 			$ops = listData('needy', "deleted = 0 $parent ORDER BY user_lname");
@@ -67,21 +67,22 @@ if(!isset($_GET['need']) or $_GET['need'] == 0) :
 		<label>Kategorija<span class="reqfield">*</span></label>
 		<select name="need_cat"><?php
 			$ops = listData('cats', 'cat_type = '.$need_cat_type.' AND deleted = 0 AND cat_level = 0');
-			echo '<option value="0"></option>';
+			echo '<option value="0">- pasirinkti -</option>';
 			foreach($ops as $op) echo '<option value='.$op[0].'>'.$op[1].'</option>'; ?>
 		</select>
 		<br>
 		
 		<?php if($need_type == 2) : ?>
 		<label>Subkategorija<span class="reqfield">*</span></label>
-		<select name="need_subcat">
-		</select>
+		<select name="need_subcat"></select>
 		<br>
 		<?php endif; ?>
 		
-		<label>Pavadinimas<span class="reqfield">*</span></label> <input type="text" value="" name="need_name" maxlength="256" required /><br>
+		<label>Pavadinimas<span class="reqfield">*</span></label>
+        <input type="text" value="" name="need_name" maxlength="256" required="required" /><br>
 		
-		<label>Aprašymas<span class="reqfield">*</span></label> <textarea name="need_desc" required /></textarea><br>
+		<label>Aprašymas<span class="reqfield">*</span></label>
+        <textarea name="need_desc" required="required"></textarea><br>
 		
 		<label>Galiojimo laikas<span class="reqfield">*</span></label> 
 		<select name="need_expires">
