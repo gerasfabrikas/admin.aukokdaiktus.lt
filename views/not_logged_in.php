@@ -4,7 +4,7 @@ include('header.php');
 
 // login form box
 ?>            
-<form method="post" action="index.php" name="loginform">
+<form method="post" action="" name="loginform">
 	<label for="user_name"><?php echo $phplogin_lang['Username']; ?></label>
 	<input id="user_name" type="text" name="user_name" required="required" />
 	<label for="user_password"><?php echo $phplogin_lang['Password']; ?></label>

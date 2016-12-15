@@ -56,19 +56,28 @@ if(!isset($_GET['need']) or $_GET['need'] == 0) :
 	endif;
 	
 	?>
-	<form action="/index.php" method="post">
+	<form action="" method="post">
 		<label>Stokojantis<span class="reqfield">*</span></label>
-		<select name="need_needy"><?php
-			$ops = listData('needy', "deleted = 0 $parent ORDER BY user_lname");
-			foreach($ops as $op) echo '<option value='.$op[0].'>'.$op['user_lname'].' '.$op['user_fname'].' '.$op['user_orgname'].'</option>'; ?>
+		<select name="need_needy">
+            <option value="">- pasirinkti -</option>
+            <?php
+			    $ops = listData('needy', "deleted = 0 $parent ORDER BY user_lname, user_orgname");
+			    foreach($ops as $op) {
+			        echo '<option value='.$op[0].'>'.$op['user_lname'].' '.$op['user_fname'].' '.$op['user_orgname'].'</option>';
+                }
+            ?>
 		</select>
 		<br>
 		
 		<label>Kategorija<span class="reqfield">*</span></label>
-		<select name="need_cat"><?php
-			$ops = listData('cats', 'cat_type = '.$need_cat_type.' AND deleted = 0 AND cat_level = 0');
-			echo '<option value="0">- pasirinkti -</option>';
-			foreach($ops as $op) echo '<option value='.$op[0].'>'.$op[1].'</option>'; ?>
+		<select name="need_cat">
+            <option value="0">- pasirinkti -</option>
+            <?php
+			    $ops = listData('cats', 'cat_type = '.$need_cat_type.' AND deleted = 0 AND cat_level = 0');
+    			foreach($ops as $op) {
+                    echo '<option value='.$op[0].'>'.$op[1].'</option>';
+                }
+            ?>
 		</select>
 		<br>
 		
