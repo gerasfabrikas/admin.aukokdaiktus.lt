@@ -3,7 +3,7 @@
 class Core {
 
     /**
-     * @var object $db The database connection (PDO)
+     * @var \PDO $db The database connection (PDO)
      */
     protected $db            = null;
 
