@@ -1,5 +1,38 @@
 <?php if($login->isUserLoggedIn() == false) return; if(!isAdmin() and !(isCustom() and haveRight(4)) ) return;
 
+// @TODO: Add the following statistics query:
+
+/*
+SELECT
+
+    n.need_id as 'Poreikio ID', n.need_name as 'Poreikis', n.need_regdate as 'Poreikis uzregistruotas', n.need_expires as 'Poreikio galiojimo laikas', IF(n.need_type = 1, 'Darbas', 'Daiktas') as 'Projektas', n.need_author, n.need_full as 'Poreikis igyvendintas (1-taip, 0-ne)', n.deleted as 'Poreikis pasalintas (1-taip, 0-ne)'
+    , c.cat_name as 'Kategorija', c.cat_type as 'Kategorijos tipas', c.cat_level as 'Kategorijos lygis', c.cat_parent as 'Tevine kategorija'
+    , c_sub.cat_name as 'Subkategorija', c_sub.cat_type as 'Subkategorijos tipas', c_sub.cat_level as 'Subkategorijos lygis', c_sub.cat_parent as 'Tevine subkategorija'
+    , n.need_full_user as 'Geradario ID', u.user_name AS 'Geradario pavadinimas', u.user_fname as 'Geradario vardas', u.user_lname as 'Geradario pavarde', u.user_region as 'Geradario regionas', u.user_city as 'Geradario miestas'
+    , ny.user_person as 'Stokojanciojo tipas', ny.user_fname as 'Stokojanciojo vardas', ny.user_lname as 'Stokojanciojo pavarde', ny.user_orgname as 'Stokojanti organizacija', ny.user_city as 'Stokojanciojo miesto ID', ny.user_region as 'Stokojanciojo regiono ID'
+    , ucity.id as 'Geradario miesto ID', ucity.`name` as 'Geradario miestas'
+    , uregion.id as 'Geradario regiono ID', uregion.`name` as 'Geradario regionas'
+    , ncity.id as 'Stokojanciojo miesto ID', ncity.`name` as 'Stokojanciojo miestas'
+    , nregion.id as 'Stokojanciojo regiono ID', nregion.`name` as 'Stokojanciojo regionas'
+
+FROM needs as n
+LEFT JOIN cats as c ON (n.need_cat = c.cat_id)
+LEFT JOIN cats as c_sub ON (n.need_cat = c_sub.cat_id)
+LEFT JOIN users as u ON (n.need_full_user = u.user_id)
+LEFT JOIN needy as ny ON (n.need_needy = ny.user_id)
+LEFT JOIN city as ucity ON (u.user_city = ucity.id)
+LEFT JOIN region as uregion ON (ucity.region_id = uregion.id)
+LEFT JOIN city as ncity ON (ny.user_city = ncity.id)
+LEFT JOIN region as nregion ON (ncity.region_id = nregion.id)
+
+WHERE
+    n.need_fulldate BETWEEN '2017-01-01 00:00:00' AND '2017-12-31 23:59:59'
+    -- AND
+    -- n.need_full = 1
+    -- AND
+    -- n.deleted != 1
+*/
+
 ?>
 <form class="inline" action="" method="GET">
 		<input type="hidden" name="p" value="stats" />
